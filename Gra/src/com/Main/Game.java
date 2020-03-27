@@ -13,9 +13,17 @@ public class Game extends Canvas implements Runnable {
 	
 	private Thread thread;
 	 private boolean running= false;
-	
+	 
+	 private Storage storage;
+	 
+	 
 	public Game() {
 	 new Window(HEIGHT, WIDTH, "projekt", this);
+	 
+	 storage = new Storage();
+	 
+	 storage.addObject(new Player(50, 50, ID.Player));
+	 
 	}
 	
 	public synchronized void start() {
@@ -65,6 +73,7 @@ catch(Exception z) {
 	}
 	
 	private void tick() {
+		storage.tick();
 		
 	}
 	private void render() {
@@ -75,9 +84,11 @@ catch(Exception z) {
 		}
 		
 		Graphics g = bs.getDrawGraphics();
-		
-		g.setColor(Color.black);
+	
+		g.setColor(Color.pink);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
+		
+		storage.render(g);
 		g.dispose();
 		bs.show();
 	}
