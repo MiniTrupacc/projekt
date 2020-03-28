@@ -17,7 +17,7 @@ public class Game extends Canvas implements Runnable {
 	 
 	 private Random p;
 	 private Storage storage;
-	 
+	 private HUD hud;
 	 
 	public Game() {
 		 storage = new Storage();
@@ -26,10 +26,14 @@ public class Game extends Canvas implements Runnable {
 		 
 	 new Window(HEIGHT, WIDTH, "projekt", this);
 	 
+	 
+	 hud = new HUD();
+	 
 	
 	 p = new Random();
 	 for(int i=0; i <1; i++) {
 	 storage.addObject(new Player(WIDTH/2-32,HEIGHT/2-32, ID.Player));
+	 storage.addObject(new Enemy(WIDTH/2-32,HEIGHT/2-32, ID.Enemy));
 	 }
 	}
 	
@@ -53,6 +57,7 @@ catch(Exception z) {
 	
 	
 	public void run() {
+		this.requestFocus();
 		long lastTime = System.nanoTime();
 		double amountOfTicks = 60.0;
 		double ns = 1000000000 / amountOfTicks;
@@ -81,7 +86,7 @@ catch(Exception z) {
 	
 	private void tick() {
 		storage.tick();
-		
+		hud.tick();
 	}
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
@@ -96,8 +101,21 @@ catch(Exception z) {
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		storage.render(g);
+		
+		hud.render(g);
+		
 		g.dispose();
 		bs.show();
+	}
+	
+	
+	public static int clamp(int var, int min, int max) {
+		if(var >= max )
+			return var = max;
+		else if (var <= min)
+			return var = min;
+		else 
+			return var;
 	}
 	
 	public static void main(String[] args) {

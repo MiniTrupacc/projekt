@@ -39,9 +39,9 @@ public class KeyInput extends KeyAdapter {
 				if(key == KeyEvent.VK_D) tempObject.setVelX(5);
 			}
 		}
-		
+		if(key == KeyEvent.VK_ESCAPE) System.exit(1);
+
 	}
-	
 
 	public void keyReleased(KeyEvent e){
 		int key = e.getKeyCode();

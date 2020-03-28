@@ -2,6 +2,6 @@ package com.Main;
 
 public enum ID {
 
-	Player();
+	Player(),
 	Enemy();
 }
