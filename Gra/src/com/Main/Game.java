@@ -108,6 +108,7 @@ catch(Exception z) {
 		bs.show();
 	}
 	
+
 	
 	public static int clamp(int var, int min, int max) {
 		if(var >= max )
@@ -116,6 +117,11 @@ catch(Exception z) {
 			return var = min;
 		else 
 			return var;
+	}
+	
+	if(HEALTH==0)
+	{
+		System.exit(1);
 	}
 	
 	public static void main(String[] args) {
