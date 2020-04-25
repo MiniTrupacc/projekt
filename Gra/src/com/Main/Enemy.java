@@ -12,7 +12,6 @@ public class Enemy extends GameObject {
 		velY = 3;
 	}
 
-
 	public void tick() {
 		x += velX;
 		y += velY;
