@@ -119,10 +119,7 @@ catch(Exception z) {
 			return var;
 	}
 	
-	if(HEALTH==0)
-	{
-		System.exit(1);
-	}
+
 	
 	public static void main(String[] args) {
 	
