@@ -7,11 +7,11 @@ public class HUD {
 
 	public static int HEALTH = 100;
 	public void tick() {
-		HEALTH --;
+		
 		HEALTH = Game.clamp(HEALTH, 0, 100);
 		if(HEALTH==0)
 		{
-			System.exit(0);
+			System.exit(0);	//wyłączenie gry gdy HP spadnie do 0
 		}
 		
 	}
