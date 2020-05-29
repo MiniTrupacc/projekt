@@ -6,13 +6,18 @@ import java.awt.Graphics;
 public class HUD {
 
 	public static int HEALTH = 100;
-	public void tick() {
+	
+	
+	
+	public void tick() 
+	{
 		
 		HEALTH = Game.clamp(HEALTH, 0, 100);
 		if(HEALTH==0)
 		{
-			System.exit(0);	//wyłączenie gry gdy HP spadnie do 0
+			System.exit(0);
 		}
+		
 		
 	}
 	
@@ -26,9 +31,6 @@ public class HUD {
 		g.setColor(Color.white);
 		g.drawRect(15, 15, 200, 32);
 	}
-	
-	
-	
 	
 	
 	
