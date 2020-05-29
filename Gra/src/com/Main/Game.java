@@ -18,13 +18,17 @@ public class Game extends Canvas implements Runnable {
 	 private Random p;
 	 private Storage storage;
 	 private HUD hud;
+	private static Enemy wrog;
+	private static Player gracz;	
+	 
+	 
 	 
 	public Game() {
 		 storage = new Storage();
 		 this.addKeyListener(new KeyInput(storage));
 		 
 		 
-	 new Window(HEIGHT, WIDTH, "projekt", this);
+	 new Window(HEIGHT, WIDTH, "GRA", this);
 	 
 	 
 	 hud = new HUD();
@@ -34,7 +38,12 @@ public class Game extends Canvas implements Runnable {
 	 for(int i=0; i <1; i++) {
 	 storage.addObject(new Player(WIDTH/2-32,HEIGHT/2-32, ID.Player));
 	 storage.addObject(new Enemy(WIDTH/2-32,HEIGHT/2-32, ID.Enemy));
+	 
+	 int hp = 0;
+	 hp = HUD.HEALTH;
+	 
 	 }
+	 
 	}
 	
 	public synchronized void start() {
@@ -80,13 +89,16 @@ catch(Exception z) {
 				System.out.println("fps: " + frames);
 				frames = 0;
 			}
-		}
+			
+			}
+		
 		stop();
 	}
 	
 	private void tick() {
 		storage.tick();
 		hud.tick();
+		
 	}
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
@@ -117,13 +129,19 @@ catch(Exception z) {
 			return var = min;
 		else 
 			return var;
+		
 	}
+	
 	
 
 	
 	public static void main(String[] args) {
+		
 	
+		
 	new Game();
+	
+	
 	
  }
 }
