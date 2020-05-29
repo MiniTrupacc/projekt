@@ -137,29 +137,7 @@ catch(Exception z) {
 		
 	}
 	
-	public void overlapp(ActionEvent e)
-	{
-		System.out.println("err1");
-		double x1 = 0;
-		double x2 = 0;
-		double y1 = 0;
-		double y2 = 0;
-		System.out.println("err2");
-		x1 = wrog.x = wrog.x + wrog.velX;
-		y1 =wrog.y = wrog.y + wrog.velY;
-		x2= gracz.x= gracz.x + gracz.velX;
-		y2 =gracz.y = gracz.y + gracz.velY;
-		System.out.println("err3");
-		if(x1 == x2 && y1 == y2)
-		{
-			System.out.println("kolizja");
-		}
-		else
-		{
-			System.out.println("err");
-		}
-		
-	}
+	
 	
 	
 	public static int clamp(int var, int min, int max) {
@@ -172,7 +150,31 @@ catch(Exception z) {
 		
 	}
 
-	
+	//kolizja nie działa
+	public class overlapping implements ActionListener {
+		
+
+		@Override
+		public void actionPerformed(ActionEvent arg0)
+		{
+				
+				System.out.println("err1");
+				double x1 = 0;
+				double x2 = 0;
+				double y1 = 0;
+				double y2 = 0;
+				System.out.println("err2");
+				x1 = wrog.x = wrog.x + wrog.velX;
+				y1 =wrog.y = wrog.y + wrog.velY;
+				x2= gracz.x= gracz.x + gracz.velX;
+				y2 =gracz.y = gracz.y + gracz.velY;
+				System.out.println("err3");
+				if(x1 == x2 && y1 == y2)
+				{
+					System.out.println("kolizja");
+				}				
+		}
+	}
 	
 	
 
