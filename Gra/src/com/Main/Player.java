@@ -20,7 +20,7 @@ public class Player extends GameObject {
 	}
 	
 	public void render(Graphics g) {
-		g.setColor(Color.blue);
+		g.setColor(Color.blue);			//obiekt gracza i jego wygląd
 		g.fillRect(x, y, 25, 25);
 	}
 	
