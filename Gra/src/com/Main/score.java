@@ -9,9 +9,10 @@ public class score {
 	
 	
 	public void render(Graphics g) {
-		g.setColor(Color.white);
+		g.setColor(Color.white);			//pozycja gdzie mają sie wyświetlać pkt i w jakiej formie
 		g.drawString(score + " pkt", 550, 40);
 	}
 	
 	
 }
+	
