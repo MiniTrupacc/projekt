@@ -19,15 +19,3 @@ Założenia projektu:
 • Samodzielność.
 
 • Odpowiedni podział obowiązków w grupie.
-
-Podział obowiązków:
-
-Podział zostaw zrealizowany poprzez przypisanie klas.
-
-Marcin Kosiński, był odpowiedzialny za klasy: Game, GameObject, HUD, ID. 
-
-Patryk Kruk, był odpowiedzialny za klasy: Enemy, points, KeyInput. 
-
-Kacper Łukaszewski, był odpowiedzialny za klasy: score, Player. 
-
-Konrad Kunka, był odpowiedzialny za klasy: Storage, Window.
